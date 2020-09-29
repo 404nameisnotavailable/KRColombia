@@ -1,0 +1,8 @@
+spriteTypes = {
+
+	### COL ###
+
+	spriteType = {
+		name = "GFX_idea_COL_president_in_hospital"
+		texturefile = "gfx/interface/ideas/ideas/COL_president_in_hospital.tga"
+	}
