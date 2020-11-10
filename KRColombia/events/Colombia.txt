@@ -58,7 +58,28 @@ country_event = { #Black Monday Violence
 	option = { #ALLY THE LEFT
 		name = col.30.a
 		ai_chance = {
-			factor = 45
+			factor = 37
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_DICTATE
+				}
+			}
+			modifier = {
+				factor = 20
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_CONSERVATIVE
+				}
+			}
+			modifier = {
+				factor = 95
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_SOCIALISM
+				}
+			}
 		}
 		hidden_effect = {
 			set_country_flag = COL_allyleft
@@ -88,7 +109,28 @@ country_event = { #Black Monday Violence
 	option = { #ALLY THE RIGHT
 		name = col.30.b
 		ai_chance = {
-			factor = 35
+			factor = 33
+			modifier = {
+				factor = 95
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_DICTATE
+				}
+			}
+			modifier = {
+				factor = 30
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_CONSERVATIVE
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_SOCIALISM
+				}
+			}
 		}
 		hidden_effect = {
 			set_country_flag = COL_allyright
@@ -118,7 +160,28 @@ country_event = { #Black Monday Violence
 	option = { #ANTICIPATE ELECTIONS
 		name = col.30.c
 		ai_chance = {
-			factor = 20
+			factor = 30
+			modifier = {
+				factor = 5
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_DICTATE
+				}
+			}
+			modifier = {
+				factor = 50
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_CONSERVATIVE
+				}
+			}
+			modifier = {
+				factor = 5
+				has_game_rule = {
+					rule = COL_great_inheritance
+					option = COL_GREAT_INHERITANCE_SOCIALISM
+				}
+			}
 		}
 		hidden_effect = {
 			set_country_flag = COL_election
@@ -246,7 +309,7 @@ country_event = { #ATTEMPTED COUP Bogotazo stage two
 	option = { #coup
 		name = col.26.a
 		ai_chance = { 
-			factor = 80 
+			factor = 60 
 		}
 		swap_ideas = { 
 			remove_idea = COL_bogotazo
@@ -257,7 +320,7 @@ country_event = { #ATTEMPTED COUP Bogotazo stage two
 	option = { #appease
 		name = col.26.b
 		ai_chance = { 
-			factor = 20 
+			factor = 40
 		}
 		add_popularity = {
 			ideology = authoritarian_democrat
@@ -289,8 +352,11 @@ country_event = { #UNIR PROPOSITION
 	log = "[GetDateText]: [Root.GetName]: event col.28"
 	}
 
-	option = {
+	option = { #accept
 		name = col.28.a
+		ai_chance = { 
+			factor = 70 
+		}
 		hidden_effect = {
 			set_country_flag = COL_Syndie_Accepted
 			remove_all_ministers = yes
@@ -313,8 +379,11 @@ country_event = { #UNIR PROPOSITION
 		}
 	}
 	
-	option = {
+	option = { #refuse
 		name = col.28.b
+		ai_chance = { 
+			factor = 30 
+		}
 		add_political_power = -30
 		add_stability = -0.05
 	}
@@ -332,10 +401,10 @@ country_event = { #TOT AND SYND PROPOSITION
 	log = "[GetDateText]: [Root.GetName]: event col.27"
 	}
 
-	option = {
+	option = { #accept
 		name = col.27.a
 		ai_chance = {
-			factor = 80
+			factor = 65
 		}
 		hidden_effect = { set_country_flag = COL_Tot_Accepted }
 		add_equipment_to_stockpile = {
@@ -367,10 +436,10 @@ country_event = { #TOT AND SYND PROPOSITION
 		}
 	}
 	
-	option = {
+	option = { #refuse
 		name = col.27.b
 		ai_chance = {
-			factor = 20
+			factor = 35
 		}
 		add_political_power = -30
 		add_stability = -0.05	
@@ -389,7 +458,7 @@ country_event = { #NON AGGRESSION PROPOSAL
 	log = "[GetDateText]: [Root.GetName]: event col.36"
 	}
 
-	option = {
+	option = { #accept
 		name = col.36.a
 		ai_chance = {
 			factor = 75
@@ -401,7 +470,7 @@ country_event = { #NON AGGRESSION PROPOSAL
 		}
 	}
 	
-	option = {
+	option = { #refuse
 		name = col.36.b
 		ai_chance = {
 			factor = 25
@@ -422,8 +491,11 @@ country_event = { #AUTDEM PROPOSITION
 	log = "[GetDateText]: [Root.GetName]: event col.34"
 	}
 
-	option = {
+	option = { #accept
 		name = col.34.a
+		ai_chance = {
+			factor = 70
+		}
 		hidden_effect = { set_country_flag = COL_Autdem_Accepted }
 		add_ideas = COL_religious_schools
 		add_political_power = -120
@@ -435,8 +507,11 @@ country_event = { #AUTDEM PROPOSITION
 		hidden_effect = { country_event = { id = col.35 days = 9 } }
 	}
 	
-	option = {
+	option = { #refuse
 		name = col.34.b
+		ai_chance = {
+			factor = 30
+		}
 		add_political_power = -30
 		add_stability = -0.05
 	}
@@ -454,8 +529,11 @@ country_event = { #PATAUT AND NATPOP PROPOSITION
 	log = "[GetDateText]: [Root.GetName]: event col.35"
 	}
 
-	option = {
+	option = { #accept
 		name = col.35.a
+		ai_chance = {
+			factor = 65
+		}
 		hidden_effect = { set_country_flag = COL_Pataut_Accepted }
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
@@ -475,8 +553,11 @@ country_event = { #PATAUT AND NATPOP PROPOSITION
 		}
 	}
 	
-	option = {
+	option = { #refuse
 		name = col.35.b
+		ai_chance = {
+			factor = 35
+		}
 		add_political_power = -30
 		add_stability = -0.05
 	}
@@ -531,6 +612,13 @@ country_event = { #38 elections
 						rule = COL_great_inheritance
 						option = COL_GREAT_INHERITANCE_DICTATE
 					}
+				}
+			}
+			modifier = {
+				factor = 1
+				OR = {
+					has_country_flag = COL_allyleft
+					has_country_flag = COL_allyright
 				}
 			}
 			modifier = {
@@ -605,6 +693,7 @@ country_event = { #38 elections
 		}
 		create_country_leader = {
 			name = "Mariano Ospina Pérez"
+			desc = "POLITICS_COL_PEREZ_DESC"
 			picture = "Portrait_Columbia_Mariano_Ospina.tga"
 			expire = "1965.1.1"
 			ideology = social_conservative_subtype
@@ -646,12 +735,15 @@ country_event = { #38 elections
 						rule = COL_great_inheritance
 						option = COL_GREAT_INHERITANCE_DICTATE
 					}
-					has_country_flag = COL_allyright
 				}
 			}
 			modifier = {
-				factor = 6
+				factor = 5
 				has_country_flag = COL_allyleft
+			}
+			modifier = {
+				factor = 1
+				has_country_flag = COL_allyright
 			}
 			modifier = {
 				factor = 2.5
@@ -662,7 +754,8 @@ country_event = { #38 elections
 			retire_country_leader = yes
 		}
 		create_country_leader = {
-			name = "Jorge Eliecer Gaitán"
+			name = "Jorge Eliécer Gaitán"
+			desc = "POLITICS_COL_GAITAN_DESC"
 			picture = "Portrait_Columbia_Jorge_Gaitan.tga"
 			expire = "1965.1.1"
 			ideology = radical_socialist_subtype
@@ -704,11 +797,14 @@ country_event = { #38 elections
 						rule = COL_great_inheritance
 						option = COL_GREAT_INHERITANCE_SOCIALISM
 					}
-					has_country_flag = COL_allyleft
 				}
 			}
 			modifier = {
-				factor = 6
+				factor = 1
+				has_country_flag = COL_allyleft
+			}
+			modifier = {
+				factor = 5
 				has_country_flag = COL_allyright
 			}
 			modifier = {
@@ -721,6 +817,7 @@ country_event = { #38 elections
 		}
 		create_country_leader = {
 			name = "Laureano Gómez Castro"
+			desc = "POLITICS_COL_GOMEZ_CASTRO_DESC"
 			picture = "Portrait_Columbia_Lauro_Gomez_Castro.tga"
 			expire = "1965.1.1"
 			ideology = authoritarian_democrat_subtype
@@ -728,7 +825,7 @@ country_event = { #38 elections
 		add_ideas = COL_Ismael_Perdomo_Borrero_hog_sde
 		add_ideas = COL_Miguel_Abadia_Mendez_for_ade
 		add_ideas = COL_Pedro_Nel_Ospina_Vazquez_eco_sco
-		add_ideas = COL_Guillermo_Padilla_Manrique_sec_ade
+		add_ideas = COL_Rafael_Navas_Pardo_sec_pau
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
@@ -747,6 +844,7 @@ country_event = { #38 elections
 		hidden_effect = { 
 			create_country_leader = {
 			name = "Alfonso López Pumarejo"
+			desc = "POLITICS_COL_PUMAREJO_DESC"
 			picture = "Portrait_Columbia_Alfonso_Pumarejo.tga"
 			expire = "1965.1.1"
 			ideology = social_democrat_subtype
@@ -842,6 +940,7 @@ country_event = { #HIDDEN RETURN LEADER
 			limit = {has_country_flag = COL_conservative}
 			create_country_leader = {
 				name = "Mariano Ospina Pérez"
+				desc = "POLITICS_COL_PEREZ_DESC"
 				picture = "Portrait_Columbia_Mariano_Ospina.tga"
 				expire = "1965.1.1"
 				ideology = social_conservative_subtype
@@ -851,6 +950,7 @@ country_event = { #HIDDEN RETURN LEADER
 				limit = {has_country_flag = COL_liberal}
 				create_country_leader = {
 					name = "Eduardo Santos Montejo"
+					desc = "POLITICS_COL_MONTEJO_DESC"
 					picture = "Portrait_Columbia_Eduardo_Montejo.tga"
 					expire = "1965.1.1"
 					ideology = social_liberal_subtype
@@ -859,7 +959,8 @@ country_event = { #HIDDEN RETURN LEADER
 				if = {
 					limit = {has_country_flag = COL_unir}
 					create_country_leader = {
-						name = "Jorge Eliecer Gaitan"
+						name = "Jorge Eliécer Gaitán"
+						desc = "POLITICS_COL_GAITAN_DESC"
 						picture = "Portrait_Columbia_Jorge_Gaitan.tga"
 						expire = "1965.1.1"
 						ideology = radical_socialist_subtype
@@ -868,10 +969,11 @@ country_event = { #HIDDEN RETURN LEADER
 					if = {
 						limit = {has_country_flag = COL_emergency}
 						create_country_leader = {
-							name = "Laureano Gómez Castro"
-							picture = "Portrait_Columbia_Lauro_Gomez_Castro.tga"
+							name = "Pedro Nel Gómez"
+							desc = "POLITICS_COL_NEL_GOMEZ_DESC"
 							expire = "1965.1.1"
-							ideology = authoritarian_democrat_subtype
+							picture = "Portrait_Columbia_Pedro_Nel_Gomez.tga"
+							ideology = syndicalist_subtype
 						}
 					}
 	}
@@ -930,7 +1032,11 @@ country_event = { #elections 42
 	option = {
 		name = col.3.a
 		ai_chance = {
-			factor = 50
+			factor = 25
+			modifier = {
+				factor = 20
+				has_country_flag = COL_conservative
+			}
 		}
 		hidden_effect = {
 			kill_country_leader = yes
@@ -938,6 +1044,7 @@ country_event = { #elections 42
 		}
 		create_country_leader = {
 			name = "Alfonso López Pumarejo"
+			desc = "POLITICS_COL_PUMAREJO_DESC"
 			picture = "Portrait_Columbia_Alfonso_Pumarejo.tga"
 			expire = "1965.1.1"
 			ideology = social_democrat_subtype
@@ -961,10 +1068,15 @@ country_event = { #elections 42
 	option = {
 		name = col.3.b
 		ai_chance = {
-			factor = 49
+			factor = 35
+			modifier = {
+				factor = 60
+				has_country_flag = COL_conservative
+			}
 		}
 		create_country_leader = {
 			name = "Mariano Ospina Pérez"
+			desc = "POLITICS_COL_PEREZ_DESC"
 			picture = "Portrait_Columbia_Mariano_Ospina.tga"
 			expire = "1965.1.1"
 			ideology = social_conservative_subtype
@@ -992,9 +1104,14 @@ country_event = { #elections 42
 		name = col.3.c
 		ai_chance = {
 			factor = 25
+			modifier = {
+				factor = 15
+				has_country_flag = COL_conservative
+			}
 		}
 		create_country_leader = {
-			name = "Jorge Eliecer Gaitán"
+			name = "Jorge Eliécer Gaitán"
+			desc = "POLITICS_COL_GAITAN_DESC"
 			picture = "Portrait_Columbia_Jorge_Gaitan.tga"
 			expire = "1965.1.1"
 			ideology = radical_socialist_subtype
@@ -1021,10 +1138,15 @@ country_event = { #elections 42
 	option = {
 		name = col.3.f
 		ai_chance = {
-			factor = 1
+			factor = 15
+			modifier = {
+				factor = 25
+				has_country_flag = COL_conservative
+			}
 		}
 		create_country_leader = {
 			name = "Laureano Gómez Castro"
+			desc = "POLITICS_COL_GOMEZ_CASTRO_DESC"
 			picture = "Portrait_Columbia_Lauro_Gomez_Castro.tga"
 			expire = "1965.1.1"
 			ideology = authoritarian_democrat_subtype
@@ -1032,7 +1154,7 @@ country_event = { #elections 42
 		add_ideas = COL_Ismael_Perdomo_Borrero_hog_sde
 		add_ideas = COL_Miguel_Abadia_Mendez_for_ade
 		add_ideas = COL_Pedro_Nel_Ospina_Vazquez_eco_sco
-		add_ideas = COL_Guillermo_Padilla_Manrique_sec_ade
+		add_ideas = COL_Rafael_Navas_Pardo_sec_pau
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
@@ -1108,9 +1230,17 @@ country_event = { #Gaitan new candidate for SocDem
 				ideology = social_democrat
 				popularity = unirsd_var
 			}
-			set_popularity = {
+			add_popularity = {
 				ideology = totalist
 				popularity = 0.02
+			}
+			kill_ideology_leader = social_democrat
+			create_country_leader = {
+				name = "Jorge Eliécer Gaitán"
+				desc = "POLITICS_COL_GAITAN_DESC"
+				picture = "Portrait_Columbia_Jorge_Gaitan.tga"
+				expire = "1965.1.1"
+				ideology = social_democrat_subtype
 			}
 		}
 		custom_effect_tooltip = COL_unirnomore_tt
@@ -1137,9 +1267,17 @@ country_event = { #Gaitan new candidate for SocDem
 				ideology = social_democrat
 				popularity = unirsd_var
 			}
-			set_popularity = {
+			add_popularity = {
 				ideology = totalist
 				popularity = 0.02
+			}
+			kill_ideology_leader = social_democrat
+			create_country_leader = {
+				name = "Jorge Eliécer Gaitán"
+				desc = "POLITICS_COL_GAITAN_DESC"
+				picture = "Portrait_Columbia_Jorge_Gaitan.tga"
+				expire = "1965.1.1"
+				ideology = social_democrat_subtype
 			}
 		}
 		custom_effect_tooltip = COL_unirnomore_tt
@@ -1210,14 +1348,22 @@ country_event = { #Acevedo is the new candidate for SocCons
 			}
 		name = col.70.a
 		hidden_effect = {
-			set_popularity = {
+			add_popularity = {
 				ideology = social_conservative
 				popularity = 0.06
 			}
-			set_popularity = {
+			add_popularity = {
 				ideology = market_liberal
 				popularity = 0.01
 			}
+			kill_ideology_leader = social_democrat
+			create_country_leader = {
+				name = "Efrain Rojas Acevedo"
+				desc = "POLITICS_COL_ACEVEDO_DESC"
+				picture = "Portrait_Columbia_Efrain_Rojas.tga"
+				expire = "1965.1.1"
+				ideology = social_conservative_subtype
+			}			
 		}
 		custom_effect_tooltip = COL_conservadornewjefe_tt
 	}
@@ -1232,13 +1378,21 @@ country_event = { #Acevedo is the new candidate for SocCons
 		}
 		name = col.70.b
 		hidden_effect = {
-			set_popularity = {
+			add_popularity = {
 				ideology = social_conservative
 				popularity = 0.06
 			}
-			set_popularity = {
+			add_popularity = {
 				ideology = market_liberal
 				popularity = 0.01
+			}
+			kill_ideology_leader = social_democrat
+			create_country_leader = {
+				name = "Efrain Rojas Acevedo"
+				desc = "POLITICS_COL_ACEVEDO_DESC"
+				picture = "Portrait_Columbia_Efrain_Rojas.tga"
+				expire = "1965.1.1"
+				ideology = social_conservative_subtype
 			}
 		}
 		custom_effect_tooltip = COL_conservadornewjefe_tt
@@ -1269,20 +1423,28 @@ country_event = { #elections 46
 		hidden_effect = {
 			set_country_flag = COL_38
 			remove_all_ministers = yes
-			#kill_country_leader = yes
+			kill_country_leader = yes
 		}
 	}
 
 	option = {
 		name = col.4.a
 		ai_chance = {
-			factor = 25
+			factor = 50
+			modifier = {
+				factor = 40
+				OR = {
+					has_country_flag = COL_conservative_2
+					has_country_flag = COL_conservative
+				}
+			}
 		}
 		hidden_effect = {
-			kill_country_leader = yes
+			#kill_country_leader = yes
 		}
 		create_country_leader = {
-			name = "Jorge Eliecer Gaitán"
+			name = "Jorge Eliécer Gaitán"
+			desc = "POLITICS_COL_GAITAN_DESC"
 			picture = "Portrait_Columbia_Jorge_Gaitan.tga"
 			expire = "1965.1.1"
 			ideology = social_democrat_subtype
@@ -1308,10 +1470,18 @@ country_event = { #elections 46
 	option = {
 		name = col.4.b
 		ai_chance = {
-			factor = 40
+			factor = 30
+			modifier = {
+				factor = 40
+				OR = {
+					has_country_flag = COL_conservative_2
+					has_country_flag = COL_conservative
+				}
+			}
 		}
 		create_country_leader = {
 			name = "Efrain Rojas Acevedo"
+			desc = "POLITICS_COL_ACEVEDO_DESC"
 			picture = "Portrait_Columbia_Efrain_Rojas.tga"
 			expire = "1965.1.1"
 			ideology = social_conservative_subtype
@@ -1326,7 +1496,7 @@ country_event = { #elections 46
 		}
 		add_political_power = -40
 		hidden_effect = {
-			kill_country_leader = yes
+			#kill_country_leader = yes
 			set_country_flag = COL_conservative
 		}
 		add_popularity = {
@@ -1338,10 +1508,11 @@ country_event = { #elections 46
 	option = {
 		name = col.4.c
 		ai_chance = {
-			factor = 30
+			factor = 5
 		}
 		create_country_leader = {
 			name = "Gilberto Vieira"
+			desc = "POLITICS_COL_VIEIRA_DESC"
 			picture = "Portrait_Columbia_Gilberto_Vieira.tga"
 			expire = "1965.1.1"
 			ideology = totalist_subtype
@@ -1356,7 +1527,7 @@ country_event = { #elections 46
 		add_ideas = COL_Eduardo_Zalamea_Borda_sec_rso
 		add_stability = -0.1
 		hidden_effect = {
-			kill_country_leader = yes
+			#kill_country_leader = yes
 			set_country_flag = COL_totalist
 		}
 		add_popularity = {
@@ -1368,10 +1539,11 @@ country_event = { #elections 46
 		option = {
 		name = col.4.f
 		ai_chance = {
-			factor = 30
+			factor = 15
 		}
 		create_country_leader = {
 			name = "Laureano Gómez Castro"
+			desc = "POLITICS_COL_GOMEZ_CASTRO_DESC"
 			picture = "Portrait_Columbia_Lauro_Gomez_Castro.tga"
 			expire = "1965.1.1"
 			ideology = authoritarian_democrat_subtype
@@ -1379,14 +1551,14 @@ country_event = { #elections 46
 		add_ideas = COL_Laureano_Eleuterio_Gomez_Castro_hog_npo
 		add_ideas = COL_Miguel_Abadia_Mendez_for_ade
 		add_ideas = COL_Pedro_Nel_Ospina_Vazquez_eco_sco
-		add_ideas = COL_Guillermo_Padilla_Manrique_sec_ade
+		add_ideas = COL_Rafael_Navas_Pardo_sec_pau
 		set_politics = {
 			ruling_party = authoritarian_democrat
 			elections_allowed = no
 		}
 		add_stability = -0.1
 		hidden_effect = {
-			kill_country_leader = yes
+			#kill_country_leader = yes
 			set_country_flag = COL_emergency
 		}
 		add_popularity = {
@@ -1395,6 +1567,10 @@ country_event = { #elections 46
 		}
 	}
 }
+
+
+
+
 
 country_event = {
 	id = col.5
@@ -2180,7 +2356,7 @@ country_event = { #End of Black Monday Struggle
 	option = {
 		name = col.32.a
 		swap_ideas = {
-			remove_idea = COL_black_3
+			remove_idea = COL_black_2
 			add_idea = COL_black_over
 		}
 	}

@@ -6,8 +6,8 @@ tags={
 	"National Focuses"
 	"Gameplay"
 }
-dependencies= { 
+dependencies={
 	"Kaiserreich"
 }
 supported_version="1.10.*"
-path="mod/KRColombia"
+path="C:/Users/Minghe/Documents/Paradox Interactive/Hearts of Iron IV/mod/KRColombia"
